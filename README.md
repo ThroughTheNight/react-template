@@ -51,7 +51,9 @@ import LinesEllipsis from 'react-lines-ellipsis'
 用于说明 commit 的类别，只允许使用下面7个标识。
 
 1. feat：新功能（feature）
+2. add: 对过去功能的简单修改
 2. fix：修补bug
+
 3. docs：文档（documentation）
 4. style： 格式（不影响代码运行的变动）
 5. refactor：重构（即不是新增功能，也不是修改bug的代码变动）

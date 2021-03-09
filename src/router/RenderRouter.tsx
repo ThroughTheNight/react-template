@@ -3,6 +3,7 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
+  Redirect
 } from 'react-router-dom';
 import IfWrap from "components/if-wrap/IfWrap";
 import IRouteItem from "./types";
@@ -15,9 +16,10 @@ interface IRouterConfig {
 export default function RenderRouter(props: IRouterConfig) {
   const { routes, extraProps } = props;
   return (
-    <IfWrap when={ routes }>
+    <IfWrap when={routes}>
       <Router>
         <Switch>
+          <Route path="/" exact render={() => <Redirect to="/home" />} />
           {
             routes.map((route, i) => (
               <Route
@@ -25,7 +27,7 @@ export default function RenderRouter(props: IRouterConfig) {
                 path={route.path}
                 exact={route.exact}
                 render={(props) =>
-                  <route.component {...props} {...extraProps} routes={ route.routes } />
+                  <route.component {...props} {...extraProps} routes={route.routes} />
                 }
               />
             ))
