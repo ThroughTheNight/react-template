@@ -73,12 +73,12 @@ declare module '*.module.sass' {
   export default classes;
 }
 
-declare module '*.tsx' {
-  const classes: { readonly [key: string]: string };
-  export default classes;
-}
+// declare module '*.tsx' {
+//   const classes: { readonly [key: string]: string };
+//   export default classes;
+// }
 
-declare module '*.jsx' {
-  const classes: { readonly [key: string]: string };
-  export default classes;
-}
+// declare module '*.jsx' {
+//   const classes: { readonly [key: string]: string };
+//   export default classes;
+// }

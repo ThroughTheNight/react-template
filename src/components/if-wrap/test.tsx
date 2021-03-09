@@ -1,5 +1,5 @@
 import React from "react";
-import IfWrap from "./IfWrap.jsx";
+import IfWrap from "./IfWrap";
 
 export default function IfWrapDemo() {
   return (

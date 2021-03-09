@@ -1,12 +1,12 @@
 import React from 'react';
-import { Button } from 'antd';
+import RouterConfig from "router/router-config";
+import RenderRouter from "router/RenderRouter";
 import styles  from "./app.scss";
 
 function App() {
   return (
-    <div className={ styles.color }>
-      ddd
-      <Button>sss</Button>
+    <div className={ styles.app }>
+      <RenderRouter routes={ RouterConfig }  />
     </div>
   );
 }
