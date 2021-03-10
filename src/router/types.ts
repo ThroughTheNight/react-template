@@ -1,14 +1,10 @@
 
 import React, { FC, ComponentType } from "react";
 
-interface IChildrenProps {
-  [key: string]: any,
-}
-
- interface IRouteItem {
+interface IRouteItem {
   key: string,
   path: string,
-  component: FC<IChildrenProps> | ComponentType<IChildrenProps>,
+  component: any,
 
   exact?: boolean,
   routes?: IRouteItem[],
