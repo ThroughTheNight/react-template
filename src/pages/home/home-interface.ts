@@ -6,5 +6,4 @@ export interface IRouterConfig {
   routes?: IRouteItem[],
   count?: number,
   onClickDispatch: (action: IAction) => void,
-  onClickDispatchAsync?: () => any,
 }
