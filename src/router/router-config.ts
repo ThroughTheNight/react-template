@@ -8,7 +8,6 @@ import IRouteItem from "./types";
 type IRouter = IRouteItem[]
 
 
-
 const router: IRouter = [
   {
     key: 'home',

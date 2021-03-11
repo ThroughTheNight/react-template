@@ -1,5 +1,5 @@
 
-import React, { FC, ComponentType } from "react";
+import React, { ComponentType } from "react";
 
 interface IRouteItem {
   key: string,

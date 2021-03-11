@@ -1,21 +1,21 @@
 import React, { FC } from "react";
-import IRouteItem from "router/types";
 import RenderRouter from "router/RenderRouter";
+import { IRouterConfig } from "./home-interface";
 import { Link } from "react-router-dom";
 import { Button } from "antd";
 import { connect } from "react-redux";
-import { IState } from "store/types";
+import { Dispatch } from "redux";
+import { INCREMENT_COUNT, DECREMENT_COUNT } from "store/reduces/counts";
+import { DECREMENT_COUNT_ASYNC } from "store/sagas/root-saga";
+import { IState, IAction } from "store/types";
 
-interface IRouterConfig {
-  routes?: IRouteItem[],
-  count?: number,
-}
-
-const Home: FC<IRouterConfig> = ({ routes, count }) => {
+const Home: FC<IRouterConfig> = ({ routes, count, onClickDispatch }) => {
   return (
     <div>
-      Home Page
-      <Button>increment</Button>
+      <div>Home Page</div>
+      <Button onClick={ () => onClickDispatch({ type: INCREMENT_COUNT }) }>increment</Button>
+      <Button onClick={ () => onClickDispatch({ type: DECREMENT_COUNT }) }>decrement</Button>
+      <Button onClick={ () => onClickDispatch({ type: DECREMENT_COUNT_ASYNC }) }>saga decrement</Button>
       <div>count is {count}</div>
       <div><Link to="/about">To About</Link></div>
       {
@@ -31,4 +31,12 @@ const mapStateToProps = (state: IState) => {
   };
 };
 
-export default connect(mapStateToProps)(Home);
+const mapDispatchToProps = (dispatch: Dispatch) => {
+  return {
+    onClickDispatch: (action: IAction) => {
+      dispatch(action);
+    },
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Home);

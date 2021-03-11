@@ -45,13 +45,10 @@ instance.interceptors.response.use(
 );
 
 // 包装请求
-/**
- * @param { String } url 请求路径，必填
- * @param { String } method 请求方法，默认值为 get
- * @param { Object } params 请求数据
- * @param { Object } config 设置，如 headers 等
- */
-export default function request(url, method = 'get', params = {}, config = {}) {
+interface IParams {
+  [key: string]: any
+}
+export default function request(url: string, method = 'get', params: IParams = {}, config: IParams  = {}) {
   const option = Object.assign({}, config);
    // 设置 url
   option.url = url;

@@ -9,17 +9,18 @@ interface IAction {
 }
 
 const counts = (state: IState = { count: 0 }, { type }: IAction) => {
+  const newState = Object.assign({}, state);
   switch (type) {
     case INCREMENT_COUNT:
-
-      return state;
+      newState.count++;
+      return newState;
 
     case DECREMENT_COUNT:
-
-      return state;
+      newState.count--;
+      return newState;
 
     default:
-      return state;
+      return newState;
   }
 };
 
