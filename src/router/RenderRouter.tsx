@@ -1,6 +1,5 @@
 import React from "react";
 import {
-  BrowserRouter as Router,
   Switch,
   Route,
   Redirect
@@ -17,23 +16,21 @@ export default function RenderRouter(props: IRouterConfig) {
   const { routes, extraProps } = props;
   return (
     <IfWrap when={routes}>
-      <Router>
-        <Switch>
-          <Route path="/" exact render={() => <Redirect to="/home" />} />
-          {
-            routes.map((route, i) => (
-              <Route
-                key={route.key || i}
-                path={route.path}
-                exact={route.exact}
-                render={(props) =>
-                  <route.component {...props} {...extraProps} routes={route.routes} />
-                }
-              />
-            ))
-          }
-        </Switch>
-      </Router>
+      <Switch>
+        <Route path="/" exact render={() => <Redirect to="/home" />} />
+        {
+          routes.map((route, i) => (
+            <Route
+              key={route.key || i}
+              path={route.path}
+              exact={route.exact}
+              render={(props) =>
+                <route.component {...props} {...extraProps} routes={route.routes} />
+              }
+            />
+          ))
+        }
+      </Switch>
     </IfWrap>
   );
 }
