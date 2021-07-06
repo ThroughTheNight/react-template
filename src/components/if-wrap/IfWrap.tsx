@@ -1,6 +1,7 @@
 import React, { Children, FC } from "react";
 
 interface IIfWrapProps {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   when: any,
 }
 

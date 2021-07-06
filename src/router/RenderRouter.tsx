@@ -9,7 +9,8 @@ import IRouteItem from "./types";
 
 interface IRouterConfig {
   routes: IRouteItem[],
-  extraProps?: object,
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  extraProps?: any,
 }
 
 export default function RenderRouter(props: IRouterConfig) {
