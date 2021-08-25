@@ -5,6 +5,6 @@ interface IExample {
   readonly id: number,
   name: string,
   age: number,
-};
+}
 
 export default IExample;

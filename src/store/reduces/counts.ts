@@ -1,7 +1,7 @@
 import { IState } from "../types";
 
-export const INCREMENT_COUNT: string = 'INCREMENT_COUNT';
-export const DECREMENT_COUNT: string = 'DECREMENT_COUNT';
+export const INCREMENT_COUNT = "INCREMENT_COUNT";
+export const DECREMENT_COUNT = "DECREMENT_COUNT";
 
 interface IAction {
   type: string,

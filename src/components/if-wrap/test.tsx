@@ -1,7 +1,7 @@
 import React from "react";
 import IfWrap from "./IfWrap";
 
-export default function IfWrapDemo() {
+export default function IfWrapDemo () {
   return (
     <div>
       <IfWrap when={ true }>

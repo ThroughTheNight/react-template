@@ -1,4 +1,3 @@
-import React, { ComponentType } from "react";
 import Home from "pages/home/Home";
 import Header from "pages/home/header/Header";
 import About from "pages/about/About";
@@ -10,20 +9,20 @@ type IRouter = IRouteItem[]
 
 const router: IRouter = [
   {
-    key: 'home',
-    path: '/home',
+    key: "home",
+    path: "/home",
     component: Home,
     routes: [
       {
-        key: 'header',
-        path: '/home/header',
+        key: "header",
+        path: "/home/header",
         component: Header,
-      }
-    ]
+      },
+    ],
   },
   {
-    key: 'about',
-    path: '/about',
+    key: "about",
+    path: "/about",
     component: About,
   },
 ];

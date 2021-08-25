@@ -1,7 +1,7 @@
 import { combineReducers } from "redux";
-import counts from './counts';
+import counts from "./counts";
 
 const rootReduces = combineReducers({
-  counts
+  counts,
 });
 export default rootReduces;
